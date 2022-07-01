@@ -52,7 +52,7 @@ class HomePageController extends Controller
                 $file = $request->file('avatar_image');
                 $name_gen = hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
                 $img = Image::make($file);
-                $img->resize(200, 200, function ($constraint) {
+                $img->resize(150, 150, function ($constraint) {
                     $constraint->aspectRatio();
                 });
                 $resource = $img->stream()->detach();
