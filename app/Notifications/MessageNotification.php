@@ -71,6 +71,7 @@ class MessageNotification extends Notification
     public function toVonage($notifiable)
     {
     return (new VonageMessage)
-        ->content('Hello Minh! On '.date('M d, Y, g:i A', strtotime($this->message['created_at'])).', you received a contact message from '.$this->message['name'].' with content: '.$this->message['message']);
+        ->content('Hello Minh! On '.date('M d, Y, g:i A', strtotime($this->message['created_at'])).', you received a contact message from '.$this->message['name'].' with content: '.$this->message['message'])
+        ->unicode();
     }
 }

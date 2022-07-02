@@ -68,6 +68,7 @@ class HireNotification extends Notification
     public function toVonage($notifiable)
     {
     return (new VonageMessage)
-        ->content('Hello Minh! On '.date('M d, Y, g:i A', strtotime($this->hire['created_at'])).', you received a hire request from '.$this->hire['name'].' with content: '.$this->hire['message']);
+        ->content('Hello Minh! On '.date('M d, Y, g:i A', strtotime($this->hire['created_at'])).', you received a hire request from '.$this->hire['name'].' with content: '.$this->hire['message'])
+        ->unicode();
     }
 }
