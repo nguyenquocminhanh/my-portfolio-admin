@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Skill;
+use App\Models\ProgrammingLanguage;
 use App\Models\Education;
 use App\Models\Award;
 use App\Models\Experience;
@@ -69,6 +70,63 @@ class SkillController extends Controller
 
         return redirect()->route('skill.all')->with($notification);
     }
+
+
+
+    public function ProgrammingLanguageAll() {
+        $languages = ProgrammingLanguage::latest()->get();
+        return view('admin.skill.programming_language_all', compact('languages'));
+    }
+
+    public function ProgrammingLanguageAdd() {
+        return view('admin.skill.programming_language_add');
+    }
+
+    public function ProgrammingLanguageStore(Request $request) {
+        ProgrammingLanguage::insert([
+            'name' => $request->name,
+        ]);
+
+        $notification = array(
+            'message' => 'Programming Language Added Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('programming_language.all')->with($notification);
+    }
+
+    public function ProgrammingLanguageEdit($id) {
+        $language = ProgrammingLanguage::findOrFail($id);
+        return view('admin.skill.programming_language_edit', compact('language'));
+    }
+
+    public function ProgrammingLanguageUpdate(Request $request) {
+        $language = ProgrammingLanguage::findOrFail($request->programming_language_id);
+
+        $language->update([
+            'name' => $request->name,
+        ]);
+
+        $notification = array(
+            'message' => 'Programming Language Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('programming_language.all')->with($notification);
+    }
+
+    public function ProgrammingLanguageDelete($id) {
+        $language = ProgrammingLanguage::findOrFail($id);
+
+        $language->delete();
+        $notification = array(
+            'message' => 'Programming Language Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('programming_language.all')->with($notification);
+    }
+
 
 
 

@@ -160,6 +160,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/skill/update', 'SkillUpdate')->name('skill.update');
         Route::get('/skill/delete/{id}', 'SkillDelete')->name('skill.delete');
 
+        // Programming Language
+        Route::get('/programming_language/all', 'ProgrammingLanguageAll')->name('programming_language.all');
+        Route::get('/programming_language/add', 'ProgrammingLanguageAdd')->name('programming_language.add');
+        Route::post('/programming_language/store', 'ProgrammingLanguageStore')->name('programming_language.store');
+        Route::get('/programming_language/edit/{id}', 'ProgrammingLanguageEdit')->name('programming_language.edit');
+        Route::post('/programming_language/update', 'ProgrammingLanguageUpdate')->name('programming_language.update');
+        Route::get('/programming_language/delete/{id}', 'ProgrammingLanguageDelete')->name('programming_language.delete');
+
         // EDUCATION
         Route::get('/education/all', 'EducationAll')->name('education.all');
         Route::get('/education/add', 'EducationAdd')->name('education.add');

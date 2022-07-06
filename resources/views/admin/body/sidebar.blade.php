@@ -26,6 +26,7 @@
                         <li><a href="{{ route('about.edit') }}">About Me</a></li>
                         <li><a href="{{ route('highlight.all') }}">Highlight</a></li>
                         <li><a href="{{ route('skill.all') }}">Skill</a></li>
+                        <li><a href="{{ route('programming_language.all') }}">Programming Language</a></li>
                         <li><a href="{{ route('education.all') }}">Education</a></li>
                         <li><a href="{{ route('award.all') }}">Award</a></li>
                         <li><a href="{{ route('experience.all') }}">Experience</a></li>
