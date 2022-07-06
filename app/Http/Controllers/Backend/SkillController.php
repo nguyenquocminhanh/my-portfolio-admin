@@ -505,12 +505,14 @@ class SkillController extends Controller
     // API
     public function AllSkill() {
         $skills = Skill::latest()->get();
+        $languages = ProgrammingLanguage::latest()->get();
         $edus = Education::latest()->get();
         $awards = Award::latest()->get();
         $experiences = Experience::latest()->get();
         return response([
             'message' => 'Get Skills Data Successfully!',
             'skills' => $skills,
+            'programming_languages' => $languages,
             'educations' => $edus,
             'awards' => $awards,
             'experiences' => $experiences
