@@ -249,7 +249,7 @@ class BlogController extends Controller
 
     // API
     public function AllBlog () {
-        $result = Blog::with('category', 'comments.replies.replies')->latest()->get();
+        $result = Blog::with('category', 'comments.replies.replies')->orderBy('id', 'DESC')->get();
         return $result;
     }
 
