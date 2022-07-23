@@ -147,7 +147,7 @@ class HomePageController extends Controller
     public function GetHomeData() {
         $home_page = HomePage::first();
         $testimonials = Testimonial::latest()->get();
-        $blogs = Blog::latest()->with('category')->get();
+        $blogs = Blog::orderBy('id', 'DESC')->with('category')->get();
         $blog_categories = BlogCategory::with('blog')->get();
         $projects = Project::latest()->with('category')->get();
 
