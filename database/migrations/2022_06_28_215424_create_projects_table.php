@@ -30,7 +30,8 @@ return new class extends Migration
             $table->string('demo_video')->nullable();
             $table->text('content');
             $table->string('project_link')->nullable();
-            $table->string('github_link')->nullable();
+            $table->string('frontend_link')->nullable();
+            $table->string('backend_link')->nullable();
             $table->string('share_count')->default('0');
             $table->timestamps();
         });

@@ -87,11 +87,22 @@
                                         <input class="form-control" type="text" name="project_link" value="{{old('project_link')}}">
                                     </div>
                                 </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="example-text-input" class="col-sm-12 col-form-label">Github Frontend Link</label>
+                                    <div class="form-group col-10 col-lg-12">
+                                        <input class="form-control" type="text" name="frontend_link" value="{{old('frontend_link')}}">
+                                    </div>
+                                </div>
 
                                 <div class="col-lg-6">
-                                    <label for="example-text-input" class="col-sm-12 col-form-label">Github Link (short Link)</label>
+                                    <label for="example-text-input" class="col-sm-12 col-form-label">Github Backend Link</label>
                                     <div class="form-group col-10 col-lg-12">
-                                        <input class="form-control" type="text" name="github_link" value="{{old('github_link')}}">
+                                        <input class="form-control" type="text" name="backend_link" value="{{old('backend_link')}}">
                                     </div>
                                 </div>
                             </div>
