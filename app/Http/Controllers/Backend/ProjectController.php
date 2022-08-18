@@ -303,12 +303,12 @@ class ProjectController extends Controller
 
     // API
     public function AllProject () {
-        $result = Project::with('category')->latest()->get();
+        $result = Project::with('category')->get();
         return $result;
     }
 
     public function ProjectDetails ($id) {
-        $result = Project::with('category'  )->findOrFail($id);
+        $result = Project::with('category')->findOrFail($id);
         return $result;
     }
 }
