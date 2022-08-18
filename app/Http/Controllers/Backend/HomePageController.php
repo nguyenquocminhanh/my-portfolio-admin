@@ -149,7 +149,7 @@ class HomePageController extends Controller
         $testimonials = Testimonial::latest()->get();
         $blogs = Blog::orderBy('id', 'DESC')->with('category')->get();
         $blog_categories = BlogCategory::with('blog')->get();
-        $projects = Project::latest()->with('category')->get();
+        $projects = Project::with('category')->get();
 
         return response([
             'message' => "Get Home Data Successfully!",

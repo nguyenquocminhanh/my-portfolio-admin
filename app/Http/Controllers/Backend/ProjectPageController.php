@@ -95,7 +95,7 @@ class ProjectPageController extends Controller
 
     // API
     public function GetProjectData() {
-        $projects = Project::latest()->with('category')->get();
+        $projects = Project::with('category')->get();
         $project_categories = ProjectCategory::with('project')->get();
         $project_page = ProjectPage::first();
 
